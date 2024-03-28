@@ -8,7 +8,7 @@ const LandingPage = () => {
       <div className="navbar">
         <Navbar />
       </div>
-      <div className="header">
+      <div className="header my-auto">
         <Header />
       </div>
       <div className="footer absolute bottom-0 mx-auto w-[100%] p-4">
