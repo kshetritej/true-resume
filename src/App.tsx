@@ -1,9 +1,10 @@
+import LandingPage from "./components/pages/LandingPage"
 
 function App() {
 
   return (
     <>
-      <h1>Resume Builder </h1>
+    <LandingPage/>
     </>
   )
 }
