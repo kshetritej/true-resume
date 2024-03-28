@@ -1,5 +1,4 @@
 import { Sun, Moon } from "lucide-react";
-import { useState } from "react";
 const Navbar = () => {
   const darkTheme = false;
   return (
