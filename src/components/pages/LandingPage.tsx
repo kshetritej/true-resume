@@ -11,7 +11,7 @@ const [header, setHeader ] = useState(true);
         <Navbar />
       </div>
       <div className="header my-auto">
-      {header ? <Header setHeader={setHeader}/> : <PersonalInfoPage/>}
+      {header ? <Header/> : <PersonalInfoPage/>}
       </div>
 
       <div className="footer absolute bottom-0 mx-auto w-[100%] p-4">

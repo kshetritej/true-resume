@@ -14,31 +14,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import EducationPage from "./EducationPage";
+import PersonalInfoPage from "./PersonalInfoPage";
 
-const PersonalInfoPage = () => {
+const EducationPage= () => {
   return (
     <Card className="w-[350px]">
       <CardHeader>
-        <CardTitle>Basic Information</CardTitle>
-        <CardDescription>Your basic information.</CardDescription>
+        <CardTitle>Add Education</CardTitle>
+        <CardDescription>Your education information.</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Fullname" />
+              <Label htmlFor="uni-name">University/College/School Name</Label>
+              <Input id="uni-name" placeholder="" />
+              <Input id="year" placeholder="2020-2024" />
             </div>
-
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" placeholder="johndoe@mail.com" />
-            </div>
-
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="phone">Phone</Label>
-              <Input id="phone" placeholder="+977 9---------" />
+            <Button variant={'outline'}>Add another education</Button>
             </div>
           </div>
         </form>
@@ -50,7 +44,7 @@ const PersonalInfoPage = () => {
             <Button>Next</Button>
           </AlertDialogTrigger>
           <AlertDialogContent>
-          <EducationPage/> 
+            <PersonalInfoPage/>
           </AlertDialogContent>
         </AlertDialog>
       </CardFooter>
@@ -58,4 +52,4 @@ const PersonalInfoPage = () => {
   );
 };
 
-export default PersonalInfoPage;
+export default EducationPage;

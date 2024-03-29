@@ -1,4 +1,17 @@
+import { useState } from "react";
 import { Button } from "../ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import PersonalInfoPage from "../pages/PersonalInfoPage";
 
 const Header = () => {
   return (
@@ -11,7 +24,14 @@ const Header = () => {
           Craft your perfect resume effortlessly.
         </h3>
         <div className="mt-8">
-          <Button>Create my Resume</Button>
+          <AlertDialog>
+            <AlertDialogTrigger>
+              <Button>Create my Resume</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <PersonalInfoPage />
+            </AlertDialogContent>
+        </AlertDialog>
         </div>
       </div>
     </div>
