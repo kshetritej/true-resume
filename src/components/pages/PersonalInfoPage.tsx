@@ -50,7 +50,7 @@ const PersonalInfoPage = () => {
             <Button>Next</Button>
           </AlertDialogTrigger>
           <AlertDialogContent>
-          <EducationPage/> 
+            <EducationPage />
           </AlertDialogContent>
         </AlertDialog>
       </CardFooter>

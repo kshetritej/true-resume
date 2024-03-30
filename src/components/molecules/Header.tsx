@@ -1,18 +1,5 @@
-import { useState } from "react";
 import { Button } from "../ui/button";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import PersonalInfoPage from "../pages/PersonalInfoPage";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="p-10">
@@ -24,14 +11,9 @@ const Header = () => {
           Craft your perfect resume effortlessly.
         </h3>
         <div className="mt-8">
-          <AlertDialog>
-            <AlertDialogTrigger>
-              <Button>Create my Resume</Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <PersonalInfoPage />
-            </AlertDialogContent>
-        </AlertDialog>
+          <Link to="/new">
+            <Button>Create my Resume</Button>
+          </Link>
         </div>
       </div>
     </div>
