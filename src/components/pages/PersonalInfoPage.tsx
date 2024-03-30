@@ -1,9 +1,5 @@
+import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
-import {
-  AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-} from "../ui/alert-dialog";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,11 +10,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import EducationPage from "./EducationPage";
-
 const PersonalInfoPage = () => {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[450px] mx-auto">
       <CardHeader>
         <CardTitle>Basic Information</CardTitle>
         <CardDescription>Your basic information.</CardDescription>
@@ -44,15 +38,12 @@ const PersonalInfoPage = () => {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <AlertDialog>
-          <AlertDialogTrigger>
-            <Button>Next</Button>
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <EducationPage />
-          </AlertDialogContent>
-        </AlertDialog>
+        <Link to={"/"}>
+          <Button variant="outline">Cancel</Button>
+        </Link>
+        <Link to={"/education"}>
+          <Button>Next</Button>
+        </Link>
       </CardFooter>
     </Card>
   );

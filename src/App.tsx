@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PersonalInfoPage from "./components/pages/PersonalInfoPage";
 import Navbar from "./components/molecules/Navbar";
 import Footer from "./components/molecules/Footer";
 import Header from "./components/molecules/Header";
+import EducationPage from "./components/pages/EducationPage";
+import GetInformation from "./components/pages/GetInformation";
 function App() {
   return (
     <>
@@ -13,8 +14,9 @@ function App() {
         <div className="content my-auto">
           <BrowserRouter>
             <Routes>
-              <Route path="/new" element={<PersonalInfoPage />} />
+              <Route path="/new" element={<GetInformation/>} />
               <Route path="/" element={<Header/>} />
+              <Route path="/education" element={<EducationPage/>}/>
             </Routes>
           </BrowserRouter>
         </div>
