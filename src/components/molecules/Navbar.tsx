@@ -1,4 +1,5 @@
 import { Sun, Moon } from "lucide-react";
+import { ModeToggle } from "../mode-toggle";
 const Navbar = () => {
   const darkTheme = false;
   return (
@@ -7,7 +8,7 @@ const Navbar = () => {
         <h2 className="text-slate-900 font-lg font-semibold">TrueResume.</h2>
       </div>
       <div className="darkmode-toggler text-slate-900">
-        {darkTheme ? <Moon /> : <Sun />}
+      <ModeToggle/>
       </div>
     </div>
   );
