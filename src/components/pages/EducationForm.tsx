@@ -13,16 +13,16 @@ import { z } from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
 
 const formSchema = z.object({
-  fullName: z.string().min(2).max(50),
-  phone: z.string().min(10).max(10),
-  email: z.string().email(),
-  linkedinLink: z.string(),
+  uniName: z.string(),
+  uniAddress: z.string(),
+  course: z.string(),
+  startingYear: z.string(),
+  endYear: z.string(),
 });
 
-const CreateForm = () => {
+const EducationForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {},
@@ -30,7 +30,6 @@ const CreateForm = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
-    return <Navigate to="/education" />;
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
@@ -42,15 +41,15 @@ const CreateForm = () => {
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
             control={form.control}
-            name="fullName"
+            name="uniName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Full Name</FormLabel>
+                <FormLabel>Education Provider (University, College, School )</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is your public display name.
+                Name of the place where you attended your education.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -59,15 +58,15 @@ const CreateForm = () => {
 
           <FormField
             control={form.control}
-            name="phone"
+            name="uniAddress"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone Number</FormLabel>
+                <FormLabel>Place Attended</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is your public phone number that you use daily.
+                Address where you attended your education.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -76,15 +75,15 @@ const CreateForm = () => {
 
           <FormField
             control={form.control}
-            name="email"
+            name="course"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>Course</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                  Your email, prefer business mail over personal.
+                Name of the course you studied.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -93,24 +92,42 @@ const CreateForm = () => {
 
           <FormField
             control={form.control}
-            name="linkedinLink"
+            name="startingYear"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>LinkedIn Profile Link</FormLabel>
+                <FormLabel>Staring Year</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                  Your LinkedIn profile link, if you have one.
+                Date startingYear of your education.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
 
+          <FormField
+            control={form.control}
+            name="endYear"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>End Year</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormDescription>
+                when your education ended.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <div className="buttons flex justify-between">
-            <Button type="button" variant={'outline'}>Back</Button>
-            <Button type="submit"><Link to={'/education'}>Next</Link></Button>
+            <Button type="button" variant={"outline"}>
+              Back
+            </Button>
+            <Button type="submit">Next</Button>
           </div>
         </form>
       </Form>
@@ -118,4 +135,4 @@ const CreateForm = () => {
   );
 };
 
-export default CreateForm;
+export default EducationForm;

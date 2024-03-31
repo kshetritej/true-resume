@@ -4,6 +4,7 @@ import Footer from "./components/molecules/Footer";
 import Header from "./components/molecules/Header";
 import CreateForm from "./components/pages/CreateForm";
 import { ThemeProvider } from "./components/theme-provider";
+import EducationForm from "./components/pages/EducationForm";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -17,6 +18,7 @@ function App() {
               <Routes>
                 <Route path="/new" element={<CreateForm />} />
                 <Route path="/" element={<Header />} />
+                <Route path="/education" element={<EducationForm/>} />
               </Routes>
             </BrowserRouter>
           </div>
