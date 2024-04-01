@@ -1,10 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Navbar from "./components/molecules/Navbar";
 import Footer from "./components/molecules/Footer";
 import Header from "./components/molecules/Header";
-import CreateForm from "./components/pages/CreateForm";
 import { ThemeProvider } from "./components/theme-provider";
-import EducationForm from "./components/pages/EducationForm";
+import FormContainer from "./components/pages/FormContainer";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -16,9 +15,8 @@ function App() {
           <div className="content container mx-auto my-auto">
             <BrowserRouter>
               <Routes>
-                <Route path="/new" element={<CreateForm />} />
+                <Route path="/new" element={<FormContainer/>} />
                 <Route path="/" element={<Header />} />
-                <Route path="/education" element={<EducationForm/>} />
               </Routes>
             </BrowserRouter>
           </div>

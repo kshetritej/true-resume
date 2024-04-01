@@ -35,8 +35,6 @@ const EducationForm = () => {
   }
   return (
     <div>
-      <h1 className="text-4xl font-bold">Profile Information</h1>
-      <p className="mb-4 text-muted">Your basic information</p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -123,12 +121,6 @@ const EducationForm = () => {
               </FormItem>
             )}
           />
-          <div className="buttons flex justify-between">
-            <Button type="button" variant={"outline"}>
-              Back
-            </Button>
-            <Button type="submit">Next</Button>
-          </div>
         </form>
       </Form>
     </div>
