@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -18,6 +17,7 @@ const formSchema = z.object({
   uniName: z.string(),
   uniAddress: z.string(),
   course: z.string(),
+  gpa: z.number(),
   startingYear: z.string(),
   endYear: z.string(),
 });
@@ -70,7 +70,7 @@ const EducationForm = () => {
               </FormItem>
             )}
           />
-
+          
           <FormField
             control={form.control}
             name="course"
@@ -88,8 +88,25 @@ const EducationForm = () => {
             )}
           />
 
-          <FormField
-            control={form.control}
+          <FormField control={form.control}
+            name="gpa"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>GPA </FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormDescription>
+                GPA if applicable
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+
+
+          <FormField control={form.control}
             name="startingYear"
             render={({ field }) => (
               <FormItem>
