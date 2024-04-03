@@ -9,7 +9,7 @@ import ExperienceForm from "./ExperienceForm";
 import ErrorForm from "./ErrorForm";
 
 const FormContainer = () => {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(9);
   const PageTitles = [
     "Profile Information",
     "Education Information",
