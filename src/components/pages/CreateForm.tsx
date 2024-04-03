@@ -18,9 +18,8 @@ const formSchema = z.object({
   phone: z.string().min(10).max(10),
   email: z.string().email(),
   linkedinLink: z.string().url(),
-  website:z.string().url(),
+  website: z.string().url(),
 });
-
 
 const CreateForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -70,7 +69,6 @@ const CreateForm = () => {
               </FormItem>
             )}
           />
-
           <FormField
             control={form.control}
             name="email"
@@ -87,7 +85,6 @@ const CreateForm = () => {
               </FormItem>
             )}
           />
-
           <FormField
             control={form.control}
             name="linkedinLink"
@@ -104,7 +101,6 @@ const CreateForm = () => {
               </FormItem>
             )}
           />
-
           <FormField
             control={form.control}
             name="website"
