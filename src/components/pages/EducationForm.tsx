@@ -12,6 +12,8 @@ import { z } from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { Button } from "../ui/button";
+import { Plus } from "lucide-react";
 
 const formSchema = z.object({
   uniName: z.string(),
@@ -42,12 +44,14 @@ const EducationForm = () => {
             name="uniName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Education Provider (University, College, School )</FormLabel>
+                <FormLabel>
+                  Education Provider (University, College, School )
+                </FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                Name of the place where you attended your education.
+                  Name of the place where you attended your education.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -64,13 +68,13 @@ const EducationForm = () => {
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                Address where you attended your education.
+                  Address where you attended your education.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="course"
@@ -81,14 +85,15 @@ const EducationForm = () => {
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                Name of the course you studied.
+                  Name of the course you studied.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
 
-          <FormField control={form.control}
+          <FormField
+            control={form.control}
             name="gpa"
             render={({ field }) => (
               <FormItem>
@@ -96,17 +101,14 @@ const EducationForm = () => {
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
-                <FormDescription>
-                GPA if applicable
-                </FormDescription>
+                <FormDescription>GPA if applicable</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
 
-
-
-          <FormField control={form.control}
+          <FormField
+            control={form.control}
             name="startingYear"
             render={({ field }) => (
               <FormItem>
@@ -115,7 +117,7 @@ const EducationForm = () => {
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                Date startingYear of your education.
+                  Date startingYear of your education.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -131,15 +133,19 @@ const EducationForm = () => {
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
-                <FormDescription>
-                when your education ended.
-                </FormDescription>
+                <FormDescription>when your education ended.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
         </form>
       </Form>
+      <div className="flex  justify-end">
+        <Button className="gap-2 p-4 rounded-full  flex justify-self-end">
+          <p className="text-lg">Add another education</p>
+          <Plus />
+        </Button>
+      </div>
     </div>
   );
 };
